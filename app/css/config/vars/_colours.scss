@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------|
+//	COLOUR VARIABLES
+// -----------------------------------------------------------------|
+// Contains all colour variables available throughout our project.
+
+// DEFAULTS
+// ---------------------------------|
+$color-white: #fff;
+$color-black: #000;
+
+// GREYS
+// ---------------------------------|
+$color-11: #111;
+$color-22: #222;
+$color-33: #333;
+$color-44: #444;
+$color-55: #555;
+$color-66: #666;
+$color-77: #777;
+$color-88: #888;
+$color-99: #999;
+$color-aa: #aaa;
+$color-bb: #bbb;
+$color-cc: #ccc;
+$color-dd: #ddd;
+$color-ee: #eee;
+
+// THEME
+// ---------------------------------|
+$color-alpha: $color-black;
+$color-alpha-low: darken($color-alpha, 20%);
+$color-alpha-high: lighten($color-alpha, 20%);
+
+$color-beta: $color-black;
+$color-beta-low: darken($color-beta, 20%);
+$color-beta-high: lighten($color-beta, 20%);
+
+$color-gamma: $color-black;
+$color-gamma-low: darken($color-gamma, 20%);
+$color-gamma-high: lighten($color-gamma, 20%);
+
+$color-delta: $color-black;
+$color-delta-low: darken($color-delta, 20%);
+$color-delta-high: lighten($color-delta, 20%);

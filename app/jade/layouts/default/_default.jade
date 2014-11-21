@@ -1,0 +1,75 @@
+//- -----------------------------------------------------------------|
+//- DEFAULT LAYOUT
+//- -----------------------------------------------------------------|
+//- Contains all includes, blocks, & vairables for the scaffolding of our default layout.
+
+//- VARIABLES
+//- ---------------------------------|
+include /variables/_variables
+block variables
+
+//- MIXINS
+//- ---------------------------------|
+include /mixins/_mixins
+
+doctype html
+html(class='no-js' lang= siteLang)
+	head
+		//- PAGE TITLE
+		//- -------------------------|
+		title= pageTitle
+
+		//- META TAGS
+		//- -------------------------|
+		meta(
+			name='description'
+			content= pageDesc
+		)
+		meta(
+			property='og:description'
+			content= pageDesc
+		)
+		meta(
+			property='og:site_name'
+			content= siteName
+		)
+		meta(
+			property='og:title'
+			content= pageTitle
+		)
+		meta(
+			property='og:url'
+			content= pageUrl
+		)
+		meta(
+			property='og:image'
+			content= pageImage
+		)
+		meta(
+			property='twitter:card'
+			content='summary'
+		)
+
+		//- <HEAD>
+		//- -------------------------|
+		include /layouts/default/inc/_head
+	body
+		//- <HEADER> PARTIAL
+		//- -------------------------|
+		include /layouts/default/partials/_header
+
+		//- #CONTENT BLOCK
+		//- -------------------------|
+		block content
+
+		//- <FOOTER> PARTIAL
+		//- -------------------------|
+		include /layouts/default/partials/_footer
+
+		//- OUTDATED BROWSER
+		//- -------------------------|
+		include /layouts/default/partials/_outdated
+
+		//- JS + ANALYTICS
+		//- -------------------------|
+		include /layouts/default/inc/_foot

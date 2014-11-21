@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------
+//	CUSTOM MIXINS
+// -----------------------------------------------------------------
+// Custom mixins that can be used throughout our project via @include
+
+// FONT MIXIN
+// ---------------------------------|
+@mixin font($font-name: $font-family, $size: $text-size, $color: $text-color, $uppercase: normal) {
+	font-family: $font-name;
+	font-size: $size;
+	color: $color;
+	text-transform: $uppercase;
+}
+
+// BREAKPOINTS MIXIN
+// ---------------------------------|
+@mixin bp($point) {
+	@if $point == xs {
+		@media (max-width: $screen-xs-max) { @content; }
+	}
+	@else if $point == sm {
+		@media (min-width: $screen-sm-min) { @content; }
+	}
+	@else if $point == md {
+		@media (min-width: $screen-md-min) { @content; }
+	}
+	@else if $point == lg {
+		@media (min-width: $screen-lg-min)  { @content; }
+	}
+	@else if $point == lgst {
+		@media (min-width: 1600px)  { @content; }
+	}
+}

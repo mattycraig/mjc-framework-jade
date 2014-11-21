@@ -1,0 +1,39 @@
+//- -----------------------------------------------------------------|
+//- SHARETHIS MIXIN
+//- -----------------------------------------------------------------|
+//- Contains the template for a ShareThis sharing mixin with or without an icon.
+
+
+//- PAGE SPECIFIC SHARETHIS MIXIN
+//- ---------------------------------|
+mixin shareThis(type, icon, title, desc, image, url, via)
+	- title = title || pageTitle
+	- desc = desc || pageDesc
+	- image = image || pageImage
+	- url = url || pageUrl
+	- via = via || twitterName
+	- icon = icon || 'false'
+
+	if type === 'twitter'
+		span(
+			class='share-#{type} js-sharethis st_#{type}_custom'
+			st_title= title
+			st_summary= desc
+			st_url= url
+			st_via= via
+			st_username= via
+			aria-label='Share this via #{type}'
+		)
+		if icon === 'true'
+			i(class='fa fa-#{type}' aria-hidden='true')
+	else
+		span(
+			class='.share-#{type} js-sharethis st_#{type}_custom'
+			st_title= title
+			st_summary= desc
+			st_image= image
+			st_url= url
+			aria-label='Share this via #{type}'
+		)
+		if icon === 'true'
+			i(class='fa fa-#{type}' aria-hidden='true')

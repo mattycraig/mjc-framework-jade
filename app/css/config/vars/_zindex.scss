@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------|
+//	ZINDEX VARIABLES
+// -----------------------------------------------------------------|
+// Contains our zxindex scale variables available throughout our project.
+
+// -----------------------------------------------------------------|
+// Z-INDEX SCALE
+// -----------------------------------------------------------------|
+$zIndex-1: 100;
+$zIndex-2: 200;
+$zIndex-3: 300;
+$zIndex-4: 400;
+$zIndex-5: 500;
+$zIndex-6: 600;
+$zIndex-7: 700;
+$zIndex-8: 800;
+$zIndex-9: 900;
+$zIndex-10: 1000;
+
+// 10: MODALS
+// ---------------------------------|
+$zIndex--modal: $zIndex-10;
+
+// 09: FIXED HDR/NAV
+// ---------------------------------|
+$zIndex-fixedHdr: $zIndex-9;
+$zIndex-fixedNav: $zIndex-9;
+
+// 08: PAGE OVERLAYS
+// ---------------------------------|
+$zIndex-overlay: $zIndex-8;
+
+// 07: HEADER/NAV, TOOLTIP, LOADING
+// ---------------------------------|
+$zIndex--tooltip: $zIndex-7;
+$zIndex--loading: $zIndex-7;
+$zIndex--hdr: $zIndex-7;
+$zIndex--nav: $zIndex-7;

@@ -1,0 +1,33 @@
+//--------------------------------------------
+// Font Awesome v4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+// License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+//--------------------------------------------
+
+//--------------------------------------------
+// FONT PATH
+//--------------------------------------------
+$fa-font-path: "../bower_components/font-awesome/fonts";
+
+//--------------------------------------------
+// CORE
+//--------------------------------------------
+@import "font-awesome/scss/variables";
+@import "font-awesome/scss/mixins";
+@import "font-awesome/scss/path";
+@import "font-awesome/scss/core";
+
+//--------------------------------------------
+// COMPONENTS
+//--------------------------------------------
+// @import "font-awesome/scss/larger";
+// @import "font-awesome/scss/fixed-width";
+// @import "font-awesome/scss/list";
+// @import "font-awesome/scss/bordered-pulled";
+// @import "font-awesome/scss/spinning";
+// @import "font-awesome/scss/rotated-flipped";
+// @import "font-awesome/scss/stacked";
+
+//--------------------------------------------
+// ICON CLASSES
+//--------------------------------------------
+@import "font-awesome/scss/icons";

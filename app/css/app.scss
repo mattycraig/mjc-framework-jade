@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------|
+// APP.SCSS
+// -----------------------------------------------------------------|
+// Imports all necessary scss files needed for the current project.
+
+// -----------------------------------------------------------------|
+// CONFIG
+// -----------------------------------------------------------------|
+@import 'config/vars';
+@import 'config/placeholders';
+@import 'config/mixins';
+
+// -----------------------------------------------------------------|
+// VENDOR
+// -----------------------------------------------------------------|
+@import 'vendor/bootstrap';
+@import 'vendor/fontawesome';
+@import 'vendor/outdated';
+// @import 'vendor/animate';
+
+// -----------------------------------------------------------------|
+// MODULES
+// -----------------------------------------------------------------|
+@import 'modules/defaults';
+@import 'modules/typography';
+@import 'modules/buttons';
+@import 'modules/forms';
+@import 'modules/misc';
+
+// -----------------------------------------------------------------|
+// COMPONENTS
+// -----------------------------------------------------------------|
+// @import 'components/myComponent';
+
+// -----------------------------------------------------------------|
+// PARTIALS
+// -----------------------------------------------------------------|
+@import 'partials/header';
+@import 'partials/nav';
+@import 'partials/footer';

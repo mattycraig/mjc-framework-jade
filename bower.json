@@ -1,0 +1,14 @@
+{
+	"name": "test",
+	"private": true,
+	"dependencies": {
+		"bootstrap-sass-official": "~3.3.1",
+		"modernizr": "~2.8.2",
+		"jquery": "~1.11.1",
+		"outdated-browser": "~1.1.0",
+		"font-awesome": "~4.2.0",
+		"respond": "~1.4.2",
+		"animate.css": "sass",
+		"fastclick": "~1.0.3"
+	}
+}

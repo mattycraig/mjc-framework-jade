@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------|
+//	TYPOGRAPHY MODULES
+// -----------------------------------------------------------------|
+// All overwrites & resets for common typographic elements.
+
+// -----------------------------------------------------------------|
+// BODY
+// -----------------------------------------------------------------|
+body {
+	font-size: $type-small;
+
+	// TABLET
+	// ---------------------------------|
+	@include bp(sm) {
+		font-size: $type-base;
+	}
+}
+
+::selection {
+	background: $color-alpha;
+	color: $color-white;
+}
+
+::-moz-selection {
+	background: $color-alpha;
+	color: $color-white;
+}
+
+// -----------------------------------------------------------------|
+// LINKS
+// -----------------------------------------------------------------|
+a {
+	transition: color $speed;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+// -----------------------------------------------------------------|
+// HEADINGS
+// -----------------------------------------------------------------|
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $type-heading;
+}
+
+

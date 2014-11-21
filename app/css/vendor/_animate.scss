@@ -1,0 +1,132 @@
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2014 Daniel Eden
+*/
+
+// CONFIGURATION
+// ====================================
+
+// Animation class hook
+// Set the class name to trigger animations
+// Defaults to "animated"
+$AnimateHook: "is-animated";
+
+// Animation duration
+// Sets the hook's animation duration
+// Defaults to 1s
+$AnimateDuration: 1s;
+
+// BASE STYLES
+// ====================================
+//
+// Setting styles for the animation hook class
+
+.#{$AnimateHook} {
+  animation-duration: $AnimateDuration;
+  animation-fill-mode: both;
+
+  // Modifier for infinite repetition
+  &--infinite {
+    animation-iteration-count: infinite;
+  }
+
+}
+
+// IMPORT
+// ====================================
+//
+// Imports desired animations. Configuration is pretty straight-forward; just
+// remove the import rules for animations you don't want.
+
+// Attention seekers
+@import "animate.css/source/attention_seekers/bounce";
+@import "animate.css/source/attention_seekers/flash";
+@import "animate.css/source/attention_seekers/pulse";
+@import "animate.css/source/attention_seekers/rubberBand";
+@import "animate.css/source/attention_seekers/shake";
+@import "animate.css/source/attention_seekers/swing";
+@import "animate.css/source/attention_seekers/tada";
+@import "animate.css/source/attention_seekers/wobble";
+
+// Bouncing entrances
+@import "animate.css/source/bouncing_entrances/bounceIn";
+@import "animate.css/source/bouncing_entrances/bounceInDown";
+@import "animate.css/source/bouncing_entrances/bounceInLeft";
+@import "animate.css/source/bouncing_entrances/bounceInRight";
+@import "animate.css/source/bouncing_entrances/bounceInUp";
+
+// Bouncing exits
+@import "animate.css/source/bouncing_exits/bounceOut";
+@import "animate.css/source/bouncing_exits/bounceOutDown";
+@import "animate.css/source/bouncing_exits/bounceOutLeft";
+@import "animate.css/source/bouncing_exits/bounceOutRight";
+@import "animate.css/source/bouncing_exits/bounceOutUp";
+
+// Fading entrances
+@import "animate.css/source/fading_entrances/fadeIn";
+@import "animate.css/source/fading_entrances/fadeInDown";
+@import "animate.css/source/fading_entrances/fadeInLeft";
+@import "animate.css/source/fading_entrances/fadeInRight";
+@import "animate.css/source/fading_entrances/fadeInUp";
+@import "animate.css/source/fading_entrances/fadeInDownBig";
+@import "animate.css/source/fading_entrances/fadeInLeftBig";
+@import "animate.css/source/fading_entrances/fadeInRightBig";
+@import "animate.css/source/fading_entrances/fadeInUpBig";
+
+// Fading exits
+@import "animate.css/source/fading_exits/fadeOut";
+@import "animate.css/source/fading_exits/fadeOutDown";
+@import "animate.css/source/fading_exits/fadeOutLeft";
+@import "animate.css/source/fading_exits/fadeOutRight";
+@import "animate.css/source/fading_exits/fadeOutUp";
+@import "animate.css/source/fading_exits/fadeOutDownBig";
+@import "animate.css/source/fading_exits/fadeOutLeftBig";
+@import "animate.css/source/fading_exits/fadeOutRightBig";
+@import "animate.css/source/fading_exits/fadeOutUpBig";
+
+// Flippers
+@import "animate.css/source/flippers/flip";
+@import "animate.css/source/flippers/flipInX";
+@import "animate.css/source/flippers/flipInY";
+@import "animate.css/source/flippers/flipOutX";
+@import "animate.css/source/flippers/flipOutY";
+
+// Lightspeed
+@import "animate.css/source/lightspeed/lightSpeedIn";
+@import "animate.css/source/lightspeed/lightSpeedOut";
+
+// Rotating entrances
+@import "animate.css/source/rotating_entrances/rotateIn";
+@import "animate.css/source/rotating_entrances/rotateInDownLeft";
+@import "animate.css/source/rotating_entrances/rotateInDownRight";
+@import "animate.css/source/rotating_entrances/rotateInUpLeft";
+@import "animate.css/source/rotating_entrances/rotateInUpRight";
+
+// Rotating exits
+@import "animate.css/source/rotating_exits/rotateOut";
+@import "animate.css/source/rotating_exits/rotateOutDownLeft";
+@import "animate.css/source/rotating_exits/rotateOutDownRight";
+@import "animate.css/source/rotating_exits/rotateOutUpLeft";
+@import "animate.css/source/rotating_exits/rotateOutUpRight";
+
+// Specials
+@import "animate.css/source/specials/hinge";
+@import "animate.css/source/specials/rollIn";
+@import "animate.css/source/specials/rollOut";
+
+// Zooming entrances
+@import "animate.css/source/zooming_entrances/zoomIn";
+@import "animate.css/source/zooming_entrances/zoomInDown";
+@import "animate.css/source/zooming_entrances/zoomInLeft";
+@import "animate.css/source/zooming_entrances/zoomInRight";
+@import "animate.css/source/zooming_entrances/zoomInUp";
+
+// Zooming exits
+@import "animate.css/source/zooming_exits/zoomOut";
+@import "animate.css/source/zooming_exits/zoomOutDown";
+@import "animate.css/source/zooming_exits/zoomOutLeft";
+@import "animate.css/source/zooming_exits/zoomOutRight";
+@import "animate.css/source/zooming_exits/zoomOutUp";
+

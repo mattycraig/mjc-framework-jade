@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------|
+//	TYPE VARIABLES
+// -----------------------------------------------------------------|
+// Contains all typographic variables available throughout our project.
+
+// -----------------------------------------------------------------|
+// TYPE FONTS
+// -----------------------------------------------------------------|
+$type-text: sans-serif;
+$type-heading: sans-serif;
+$type-icon: "FontAwesome", serif;
+
+// -----------------------------------------------------------------|
+// TYPE SCALE
+// -----------------------------------------------------------------|
+$type-micro: 8px;
+$type-smallest: 10px;
+$type-smaller: 12px;
+$type-small: 14px;
+$type-base: 16px;
+$type-large: 18px;
+$type-larger: 20px;
+$type-largest: 22px;
+$type-jumbo: 24px;
+
+// -----------------------------------------------------------------|
+// TYPE LETTER SPACING
+// -----------------------------------------------------------------|
+$type-space-tightest: -.1em;
+$type-space-righter: -.05em;
+$type-space-tight: -.025em;
+$type-space-normal: 0;
+$type-space-loose: .025em;
+$type-space-looser: .05em;
+$type-space-loosest: .1em;
+
+// -----------------------------------------------------------------|
+// TYPE WEIGHTS
+// -----------------------------------------------------------------|
+$type-weight-4: 400;
+$type-weight-7: 700;
+
+// -----------------------------------------------------------------|
+// TYPE STYLE
+// -----------------------------------------------------------------|
+$type-style-n: normal;
+$type-style-i: italic;
