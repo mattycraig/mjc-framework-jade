@@ -24,9 +24,19 @@ block variables
 //- CONTENT
 //- -----------------------------------------------------------------|
 block content
-	main(role='main')
-		p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sed unde numquam atque. Vitae aperiam nisi ratione. Saepe non numquam suscipit, accusamus laboriosam nam quas voluptas iusto praesentium. Commodi, maxime.
-		p
-			+shareThis('facebook', 'true')
-		p
-			+shareThis('twitter', 'false', 'this title', 'this desc')
+	main#content(role='main')
+		p Let's get started!
+
+		h4 Current Mixin Examples
+		hr
+		+hlpTimes(4)
+			p Repeat this 4 times!
+		+hlpYears('className')
+		+hlpMonths('className')
+		+hlpMonths('className', 'fr')
+		+hlpDays('className')
+		+shareThis('facebook', true)
+		+shareThis('twitter')
+		+fbSharer(true)
+		+fbSharer
+

@@ -1,0 +1,19 @@
+//- -----------------------------------------------------------------|
+//- FACEBOOK SHARER MIXIN
+//- -----------------------------------------------------------------|
+//- Contains the template for a Facebook Sharer dialog mixin with or without an icon.
+
+mixin fbSharer(icon, appId, href, redirect)
+	- icon = icon || false
+	- appId = appId || facebookAppID
+	- href = href || pageUrl
+	- redirect = redirect || pageUrl
+
+	a(
+		class='share-facebook js-sharing'
+		href='https://www.facebook.com/dialog/share?app_id=#{appId}&amp;display=popup&amp;href=#{href}&amp;redirect_uri=#{redirect}'
+		aria-label='Share this via facebook'
+		target='blank'
+	)
+		if icon
+			i(class='fa fa-facebook' aria-hidden='true')

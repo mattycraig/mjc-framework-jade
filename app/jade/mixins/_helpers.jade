@@ -1,0 +1,63 @@
+//- -----------------------------------------------------------------|
+//- HELPERS MIXINS
+//- -----------------------------------------------------------------|
+//- Contains some templates for common and useful helper mixins.
+
+//- Table of Contents:
+//- ---------------------------------|
+//- #A : REPEATABLE BLOCKS
+//- #B : FORMS: YEAR SELECT
+//- #C : FORMS: MONTH SELECT
+//- #D : FORMS: DAY SELECT
+//- ---------------------------------|
+
+
+//- #A : REPEATABLE BLOCKS
+//- ---------------------------------|
+mixin hlpTimes(limit)
+	- for (var i = 1; i <= limit; i++) {
+		block
+	- }
+
+
+//- #B : FORMS: YEAR SELECT
+//- ---------------------------------|
+mixin hlpYears(className)
+	- var getYear = new Date().getFullYear();
+	- var yearReset = getYear;
+	- var years = [];
+
+	- for (var i = 0; i < 100; i++) {
+		- getYear = getYear - i;
+		- years.push(getYear);
+		- getYear = yearReset;
+	- }
+
+	select(class='#{className}')
+		each year in years
+			option(value='#{year}')= year
+
+
+//- #C : FORMS: MONTH SELECT
+//- ---------------------------------|
+mixin hlpMonths(className, lang)
+	- lang = lang || 'en'
+	- var monthsEN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	- var monthsFR = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+	select(class='#{className}')
+		if lang === 'fr'
+			each month in monthsFR
+				option(value='#{month.toLowerCase()}')= month
+		else
+			each month in monthsEN
+				option(value='#{month.toLowerCase()}')= month
+
+
+//- #D : FORMS: DAYS SELECT
+//- ---------------------------------|
+mixin hlpDays(className)
+	select(class='#{className}')
+		- for (var i = 1; i < 32; i++) {
+			option(value='#{i}')= i
+		- }

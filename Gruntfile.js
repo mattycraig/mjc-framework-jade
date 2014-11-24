@@ -69,7 +69,7 @@ module.exports = function (grunt) {
 			},
 			jade: {
 				files: '<%= config.app %>/jade/**/*.jade',
-				tasks: ['newer:jade', 'validation'],
+				tasks: ['jade', 'validation'],
 				options: {
 					livereload: true
 				}
