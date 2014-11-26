@@ -4,15 +4,19 @@
 // All overwrites & resets for common typographic elements.
 
 // -----------------------------------------------------------------|
-// BODY
+// ROOTS
 // -----------------------------------------------------------------|
+html {
+	@include fontSize($type-base);
+}
+
 body {
-	font-size: $type-small;
+	@include fontSize($type-small);
 
 	// TABLET
 	// ---------------------------------|
 	@include bp(sm) {
-		font-size: $type-base;
+		@include fontSize($type-base);
 	}
 }
 

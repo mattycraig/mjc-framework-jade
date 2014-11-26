@@ -1,4 +1,4 @@
 mjc-framework-jade
 ==================
 
-Dev framework built with Jade
+Dev framework built with Jade, SASS, & Grunt.

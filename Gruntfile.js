@@ -248,11 +248,11 @@ module.exports = function (grunt) {
 					'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
 					'modernizr'
 				]
-			},
-			sass: {
-				src: ['<%= config.app %>/css/{,*/}*.{scss,sass}'],
-				ignorePath: /(\.\.\/){1,2}bower_components\//
 			}
+			// , sass: {
+			// 	src: ['<%= config.app %>/css/{,*/}*.{scss,sass}'],
+			// 	ignorePath: /(\.\.\/){1,2}bower_components\//
+			// }
 		},
 
 		// Renames files for browser caching purposes

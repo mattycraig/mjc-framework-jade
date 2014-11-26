@@ -3,13 +3,29 @@
 // -----------------------------------------------------------------
 // Custom mixins that can be used throughout our project via @include
 
-// FONT MIXIN
+// REM FONT SIZE WITH FALLBACK MIXIN
 // ---------------------------------|
-@mixin font($font-name: $font-family, $size: $text-size, $color: $text-color, $uppercase: normal) {
-	font-family: $font-name;
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin fontSize($size) {
 	font-size: $size;
-	color: $color;
-	text-transform: $uppercase;
+	font-size: calculateRem($size);
+}
+
+// REM LINE HEIGHT MIXIN
+// ---------------------------------|
+@mixin lineHeight($heightValue: 12) {
+	line-height: $heightValue + px;
+	line-height: (0.125 * $heightValue) + rem;
+}
+
+// HADRWARE ACCELERATION MIXIN
+// ---------------------------------|
+@mixin hardwareAccel {
+	transform: translate3d(0,0,0);
 }
 
 // BREAKPOINTS MIXIN
@@ -31,3 +47,5 @@
 		@media (min-width: 1600px)  { @content; }
 	}
 }
+
+
