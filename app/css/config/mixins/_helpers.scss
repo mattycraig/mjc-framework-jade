@@ -1,9 +1,17 @@
 // -----------------------------------------------------------------
-//	CUSTOM MIXINS
+//	HELPER MIXINS
 // -----------------------------------------------------------------
-// Custom mixins that can be used throughout our project via @include
+// Contains some templates for common and useful helper mixins.
 
-// REM FONT SIZE WITH FALLBACK MIXIN
+// Table of Contents:
+// ---------------------------------|
+// #A : REM FONT SIZE WITH FALLBACK MIXIN
+// #B : REM LINE HEIGHT MIXIN
+// #C : HADRWARE ACCELERATION MIXIN
+// #D : BREAKPOINTS MIXIN
+// ---------------------------------|
+
+// #A : REM FONT SIZE WITH FALLBACK MIXIN
 // ---------------------------------|
 @function calculateRem($size) {
 	$remSize: $size / 16px;
@@ -15,20 +23,20 @@
 	font-size: calculateRem($size);
 }
 
-// REM LINE HEIGHT MIXIN
+// #B : REM LINE HEIGHT MIXIN
 // ---------------------------------|
 @mixin lineHeight($heightValue: 12) {
 	line-height: $heightValue + px;
 	line-height: (0.125 * $heightValue) + rem;
 }
 
-// HADRWARE ACCELERATION MIXIN
+// #C : HADRWARE ACCELERATION MIXIN
 // ---------------------------------|
 @mixin hardwareAccel {
 	transform: translate3d(0,0,0);
 }
 
-// BREAKPOINTS MIXIN
+// #D : BREAKPOINTS MIXIN
 // ---------------------------------|
 @mixin bp($point) {
 	@if $point == xs {
@@ -47,5 +55,3 @@
 		@media (min-width: 1600px)  { @content; }
 	}
 }
-
-

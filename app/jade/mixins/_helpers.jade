@@ -8,7 +8,8 @@
 //- #A : REPEATABLE BLOCKS
 //- #B : FORMS: YEAR SELECT
 //- #C : FORMS: MONTH SELECT
-//- #D : FORMS: DAY SELECT
+//- #D : FORMS: NUMBERED DAYS SELECT
+//- #E : FORMS: DAYS OF THE WEEK SELECT
 //- ---------------------------------|
 
 
@@ -22,7 +23,8 @@ mixin hlpTimes(limit)
 
 //- #B : FORMS: YEAR SELECT
 //- ---------------------------------|
-mixin hlpYears(className)
+mixin hlpYears(className, lang)
+	- lang = lang || 'en'
 	- var getYear = new Date().getFullYear();
 	- var yearReset = getYear;
 	- var years = [];
@@ -33,7 +35,11 @@ mixin hlpYears(className)
 		- getYear = yearReset;
 	- }
 
-	select(class='#{className}')
+	select(class='#{className} form-control')
+		if lang === 'fr'
+			option(value='') -- Choisir
+		else
+			option(value='') -- Select
 		each year in years
 			option(value='#{year}')= year
 
@@ -45,19 +51,45 @@ mixin hlpMonths(className, lang)
 	- var monthsEN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	- var monthsFR = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
-	select(class='#{className}')
+	select(class='#{className} form-control')
 		if lang === 'fr'
+			option(value='') -- Choisir
 			each month in monthsFR
 				option(value='#{month.toLowerCase()}')= month
 		else
+			option(value='') -- Select
 			each month in monthsEN
 				option(value='#{month.toLowerCase()}')= month
 
 
-//- #D : FORMS: DAYS SELECT
+//- #D : FORMS: NUMBERED DAYS SELECT
 //- ---------------------------------|
-mixin hlpDays(className)
-	select(class='#{className}')
+mixin hlpDays(className, lang)
+	- lang = lang || 'en'
+
+	select(class='#{className} form-control')
+		if lang === 'fr'
+			option(value='') -- Choisir
+		else
+			option(value='') -- Select
 		- for (var i = 1; i < 32; i++) {
 			option(value='#{i}')= i
 		- }
+
+
+//- #E : FORMS: DAYS OF THE WEEK SELECT
+//- ---------------------------------|
+mixin hlpWeekdays(className, lang)
+	- lang = lang || 'en'
+	- var daysEN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	- var daysFR = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+
+	select(class='#{className} form-control')
+		if lang === 'fr'
+			option(value='') -- Choisir
+			each day in daysFR
+				option(value='#{day.toLowerCase()}')= day
+		else
+			option(value='') -- Select
+			each day in daysEN
+				option(value='#{day.toLowerCase()}')= day

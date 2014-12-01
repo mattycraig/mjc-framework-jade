@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------
+//	HAMBURGER MIXIN
+// -----------------------------------------------------------------
+// Mixin for our hamburger icon used for navigational purposes.
+
+@mixin hamburger($hamWidth: 100%, $hamHeight: 4px, $hamColor: $color-alpha, $hamActive: $color-beta, $hamSpeed: $speed) {
+	span,
+	span:before,
+	span:after {
+		height: $hamHeight;
+		width: $hamWidth;
+		background: $hamColor;
+		display: block;
+		content: ' ';
+		transition: all $hamSpeed;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+	}
+
+	span {
+		position: relative;
+
+		&:before,
+		&:after {
+			position: absolute;
+		}
+
+		&:before {
+			top: ($hamHeight * 2);
+		}
+
+		&:after {
+			bottom: ($hamHeight * 2);
+		}
+	}
+
+	&:hover {
+		span {
+			&:before {
+				top: ($hamHeight * 2) + 2;
+			}
+
+			&:after {
+				bottom: ($hamHeight * 2) + 2;
+			}
+		}
+	}
+
+	&.is-active {
+		span {
+			background: transparent;
+
+			&:before,
+			&:after {
+				top: 0;
+				background: $hamActive;
+			}
+
+			&:before {
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				transform: rotate(-45deg);
+			}
+		}
+
+		&:hover {
+			span {
+				&:before {
+					transform: rotate(0deg);
+				}
+
+				&:after {
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+}

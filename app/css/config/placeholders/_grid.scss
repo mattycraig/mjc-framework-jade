@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------|
+//	GRID PLACEHOLDERS
+// -----------------------------------------------------------------|
+// Grid placeholders that can be used via @extend
+
+// REMOVE GUTTERS FROM COLUMNS
+// ---------------------------------|
+%no-gutter {
+	& > [class*='col-'] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

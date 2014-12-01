@@ -3,13 +3,3 @@
 // -----------------------------------------------------------------
 // All overwrites & resets for misc elements.
 // Contains misc modules that dont need their own component.
-
-
-// REMOVE GUTTERS FROM COLUMNS
-// ---------------------------------|
-.no-gutter {
-	& > [class*='col-'] {
-		padding-right: 0;
-		padding-left: 0;
-	}
-}
