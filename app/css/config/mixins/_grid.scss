@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------
+//	GRID MIXINS
+// -----------------------------------------------------------------
+// Mixins for customizing our grid to suit our needs.
+
+// REMOVE GUTTERS FROM COLUMNS (PLACE ON ROW)
+// ---------------------------------|
+@mixin gridNoGutter($gridClass: col-) {
+	& > [class*='#{$gridClass}'] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+// CUSTOM COLUMN GUTTERS (PLACE ON ROW)
+// ---------------------------------|
+@mixin gridCustomGutter($gridGutterL: ($grid-gutter-width / 2), $gridGutterR: ($grid-gutter-width / 2), $gridClass: col-) {
+	& > [class*='#{$gridClass}'] {
+		padding-left: $gridGutterL;
+		padding-right: $gridGutterR;
+	}
+}

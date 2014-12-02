@@ -11,23 +11,23 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 //--------------------------------------------
 // CORE
 //--------------------------------------------
-@import "font-awesome/scss/variables";
-@import "font-awesome/scss/mixins";
-@import "font-awesome/scss/path";
-@import "font-awesome/scss/core";
+@import "bower_components/font-awesome/scss/variables";
+@import "bower_components/font-awesome/scss/mixins";
+@import "bower_components/font-awesome/scss/path";
+@import "bower_components/font-awesome/scss/core";
 
 //--------------------------------------------
 // COMPONENTS
 //--------------------------------------------
-// @import "font-awesome/scss/larger";
-// @import "font-awesome/scss/fixed-width";
-// @import "font-awesome/scss/list";
-// @import "font-awesome/scss/bordered-pulled";
-// @import "font-awesome/scss/spinning";
-// @import "font-awesome/scss/rotated-flipped";
-// @import "font-awesome/scss/stacked";
+// @import "bower_components/font-awesome/scss/larger";
+// @import "bower_components/font-awesome/scss/fixed-width";
+// @import "bower_components/font-awesome/scss/list";
+// @import "bower_components/font-awesome/scss/bordered-pulled";
+// @import "bower_components/font-awesome/scss/spinning";
+// @import "bower_components/font-awesome/scss/rotated-flipped";
+// @import "bower_components/font-awesome/scss/stacked";
 
 //--------------------------------------------
 // ICON CLASSES
 //--------------------------------------------
-@import "font-awesome/scss/icons";
+@import "bower_components/font-awesome/scss/icons";

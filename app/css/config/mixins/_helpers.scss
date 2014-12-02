@@ -27,13 +27,13 @@
 // ---------------------------------|
 @mixin lineHeight($heightValue: 12) {
 	line-height: $heightValue + px;
-	line-height: (0.125 * $heightValue) + rem;
+	line-height: (.125 * $heightValue) + rem;
 }
 
 // #C : HADRWARE ACCELERATION MIXIN
 // ---------------------------------|
 @mixin hardwareAccel {
-	transform: translate3d(0,0,0);
+	transform: translate3d(0, 0, 0);
 }
 
 // #D : BREAKPOINTS MIXIN

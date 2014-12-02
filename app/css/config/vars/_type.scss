@@ -6,8 +6,19 @@
 // -----------------------------------------------------------------|
 // TYPE FONTS
 // -----------------------------------------------------------------|
-$type-text: sans-serif;
-$type-heading: sans-serif;
+
+// COMMON WEBSAFE FONT STACKS
+// ---------------------------------|
+$type-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$type-tahoma: Tahoma, Verdana, Segoe, sans-serif;
+$type-trebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$type-georgia: Georgia, Times, "Times New Roman", serif;
+$type-times: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+
+// THEME FONTS
+// ---------------------------------|
+$type-text: $type-helvetica;
+$type-heading: $type-text;
 $type-icon: "FontAwesome", serif;
 
 // -----------------------------------------------------------------|

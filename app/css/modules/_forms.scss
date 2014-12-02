@@ -7,18 +7,16 @@
 // LABELS
 // -----------------------------------------------------------------|
 label {
-	font-size: $type-small;
+	@include fontSize($type-small);
 
 	// TABLET
 	// ---------------------------------|
 	@include bp(sm) {
-		font-size: $type-base;
+		@include fontSize($type-base);
 	}
 }
 
 // -----------------------------------------------------------------|
 // INPUTS
 // -----------------------------------------------------------------|
-.form-control {
-	// @include placeholder;
-}
+

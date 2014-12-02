@@ -1,0 +1,134 @@
+//- -----------------------------------------------------------------|
+//- KITCHEN SINK MIXIN
+//- -----------------------------------------------------------------|
+//- Contains the template for a all HTML elements that should be styled.
+
+mixin kitchenSink()
+	hr
+	h1 Typography
+	p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ut iure eligendi sequi provident, nam, tempora laboriosam obcaecati dolor architecto optio asperiores facilis dolorum quibusdam tenetur velit laudantium veritatis rem.
+	p
+		a(href='#') Regular Link
+	p
+		strong Bolded text
+	p
+		em Italicized text
+	blockquote
+		p Blockquote text
+	h1 Heading One
+	h2 Heading Two
+	h3 Heading Three
+	h4 Heading Four
+	h5 Heading Five
+	h6 Heading Six
+	hr
+	h1 Lists
+	ul
+		li Unordered List Item
+		li Unordered List Item
+		li Unordered List Item
+	ol
+		li Ordered List Item
+		li Ordered List Item
+		li Ordered List Item
+	hr
+	h1 Forms
+	form(action='', method='POST', role='form')
+		legend Form Legend
+		.form-group
+			label(for='input-1') Label Example
+			input#input-1.form-control(type='text', placeholder='Input Placeholder')
+		.form-group
+			.checkbox
+				label(for='input-2')
+					input#input-2(type='checkbox', value='')
+					| Checkbox
+			.radio
+				label(for='input-3')
+					input#input-3(type="radio", name="", value="", checked="checked")
+					| Radio Box
+		button.btn.btn-primary(type='submit') Submit
+	hr
+	h1 Buttons
+	p
+		button(type="button").btn.btn-default Default Button
+	p
+		button(type="button").btn.btn-primary Primary Button
+	p
+		button(type="button").btn.btn-success Success Button
+	p
+		button(type="button").btn.btn-info Info Button
+	p
+		button(type="button").btn.btn-warning Warning Button
+	p
+		button(type="button").btn.btn-danger Danger Button
+	p
+		button(type="button").btn.btn-link Link Button
+	h1 Tables
+	table.table
+		tr
+			th Heading
+			th Heading
+			th Heading
+		tr
+			td Cell
+			td Cell
+			td Cell
+	table.table.table-bordered.table-hover
+		tr
+			th Heading
+			th Heading
+			th Heading
+		tr
+			td Cell
+			td Cell
+			td Cell
+	table.table.table-striped.table-hover
+		tr
+			th Heading
+			th Heading
+			th Heading
+		tr
+			td Cell
+			td Cell
+			td Cell
+	h1 Jade Mixin Examples
+	hr
+	.row
+		.col-sm-4
+			+hlpTimes(2)
+				p Repeat this 2 times!
+		.col-sm-4
+			label Years
+			+hlpYears('className')
+		.col-sm-4
+			label Months (EN)
+			+hlpMonths('className')
+	.row
+		.col-sm-4
+			label Months (FR)
+			+hlpMonths('className', 'fr')
+		.col-sm-4
+			label Days
+			+hlpDays('className')
+		.col-sm-4
+			label Weekdays (EN)
+			+hlpWeekdays('className')
+	.row
+		.col-sm-4
+			label Weekdays (FR)
+			+hlpWeekdays('className', 'fr')
+		.col-sm-4
+			label ShareThis (With Icon)
+			+shareThis('facebook', true)
+		.col-sm-4
+			label ShareThis (No Icon)
+			+shareThis('twitter')
+	.row
+		.col-sm-4
+			label FB Sharer (With Icon)
+			+fbSharer(true)
+		.col-sm-4
+			label FB Sharer (No Icon)
+			+fbSharer
+		.col-sm-4

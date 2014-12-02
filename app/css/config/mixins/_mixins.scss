@@ -1,11 +1,15 @@
 // -----------------------------------------------------------------
 //	CUSTOM MIXINS
 // -----------------------------------------------------------------
-// Custom mixins that can be used throughout our project via @include
+// Custom mixins that can be used throughout our project via @include.
 
 // HELPER MIXINS
 // ---------------------------------|
 @import 'helpers';
+
+// GRID MIXINS
+// ---------------------------------|
+@import 'grid';
 
 // HAMBURGER MIXIN
 // ---------------------------------|

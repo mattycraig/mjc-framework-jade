@@ -2,7 +2,7 @@
 // Outdated Browser v1.1.0 - 2014
 // http://www.outdatedbrowser.com
 // -----------------------------------------------------------------
-#outdated{
+#outdated {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -52,7 +52,7 @@
 		height: 20px;
 	}
 
-	#btnCloseUpdateBrowser{
+	#btnCloseUpdateBrowser {
 		display: block;
 		position: relative;
 		width: 100%;
@@ -64,6 +64,6 @@
 	}
 }
 
-* html #outdated{
+* html #outdated {
 	position: absolute;
 }

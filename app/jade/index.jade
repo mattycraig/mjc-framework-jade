@@ -25,26 +25,7 @@ block variables
 //- -----------------------------------------------------------------|
 block content
 	main#content(role='main')
-		p Let's get started!
-
-		h4 Current Mixin Examples
-		hr
-		+hlpTimes(4)
-			p Repeat this 4 times!
-		+hlpYears('className')
-		+hlpMonths('className')
-		+hlpMonths('className', 'fr')
-		+hlpDays('className')
-		+hlpWeekdays('className')
-		+hlpWeekdays('className', 'fr')
-		+shareThis('facebook', true)
-		+shareThis('twitter')
-		+fbSharer(true)
-		+fbSharer
-		h1 Test
-		h2 Test
-		h3 Test
-		h4 Test
-		h5 Test
-		h6 Test
-		hr
+		.container
+			.row
+				.col-sm-12
+					+kitchenSink

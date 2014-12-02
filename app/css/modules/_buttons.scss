@@ -2,3 +2,13 @@
 //	BUTTON MODULES
 // -----------------------------------------------------------------|
 // All overwrites & resets for common button elements.
+
+.btn {
+	@include fontSize($type-small);
+
+	// TABLET
+	// ---------------------------------|
+	@include bp(sm) {
+		@include fontSize($type-base);
+	}
+}
