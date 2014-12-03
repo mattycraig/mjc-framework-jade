@@ -20,6 +20,7 @@
     "grunt-mocha": "^0.4.11",
     "grunt-modernizr": "^0.6.0",
     "grunt-newer": "^0.8.0",
+    "grunt-responsive-images": "^0.1.4",
     "grunt-rev": "^0.1.0",
     "grunt-sass": "^0.16.1",
     "grunt-scss-lint": "^0.3.4",

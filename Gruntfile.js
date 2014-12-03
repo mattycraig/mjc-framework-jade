@@ -490,7 +490,34 @@ module.exports = function (grunt) {
 				reporterOutput: 'log/scss-lint-report.xml',
 				colorizeOutput: true
 			}
-		 }
+		 },
+
+		// Create responsive images
+		responsive_images: {
+			dist: {
+				options: {
+					sizes: [{
+							width: 320,
+							name: 'sm'
+						},{
+							width: 640,
+							name: 'md'
+						},{
+							width: 1024,
+							name: 'lg'
+						},{
+							width: 1800,
+							name: 'lgst'
+					}]
+				},
+				files: [{
+					expand: true,
+					src: ['**.{jpg,gif,png}'],
+					cwd: '<%= config.app %>/images',
+					custom_dest: '<%= config.app %>/images/{%= name %}/'
+				}]
+			}
+		}
 
 	});
 

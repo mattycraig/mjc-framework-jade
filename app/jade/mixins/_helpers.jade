@@ -10,6 +10,8 @@
 //- #C : FORMS: MONTH SELECT
 //- #D : FORMS: NUMBERED DAYS SELECT
 //- #E : FORMS: DAYS OF THE WEEK SELECT
+//- #F : RESPONSIVE IMAGES (USING SRCSET)
+//- #G : RESPONSIVE IMAGES (USING PICTURE)
 //- ---------------------------------|
 
 
@@ -93,3 +95,50 @@ mixin hlpWeekdays(className, lang)
 			option(value='') -- Select
 			each day in daysEN
 				option(value='#{day.toLowerCase()}')= day
+
+
+//- #F : RESPONSIVE IMAGES (USING SRCSET)
+//- ---------------------------------|
+mixin hlpSrcset(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, widthLg, widthLgst)
+	- imgExt = imgExt || '.jpg'
+	- imgPath = imgPath || 'images'
+	- widthSm = widthSm || '320'
+	- widthMd = widthMd || '640'
+	- widthLg = widthLg || '1024'
+	- widthLgst = widthLgst || '1800'
+	- buildFb = imgPath + '/sm/' + imgName + imgExt
+	- buildSm = imgPath + '/sm/' + imgName  + imgExt + ' ' + widthSm + 'w'
+	- buildMd = imgPath + '/md/' + imgName + imgExt + ' ' + widthMd + 'w'
+	- buildLg = imgPath + '/lg/' + imgName + imgExt + ' ' + widthLg + 'w'
+	- buildLgst = imgPath + '/lgst/' + imgName + imgExt + ' ' + widthLgst + 'w'
+
+	img(
+		src='#{buildFb}'
+		alt='#{imgAlt}'
+		class='#{imgClass}'
+		srcset='#{buildSm}, #{buildMd}, #{buildLg}, #{buildLgst}'
+        )
+
+
+//- #G : RESPONSIVE IMAGES (USING PICTURE)
+//- ---------------------------------|
+mixin hlpPicture(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, widthLg, widthLgst)
+	- imgExt = imgExt || '.jpg'
+	- imgPath = imgPath || 'images'
+	- widthSm = widthSm || '320'
+	- widthMd = widthMd || '640'
+	- widthLg = widthLg || '1024'
+	- widthLgst = widthLgst || '1800'
+	- buildFb = imgPath + '/sm/' + imgName + imgExt
+	- buildSm = imgPath + '/sm/' + imgName + imgExt
+	- buildMd = imgPath + '/md/' + imgName + imgExt
+	- buildLg = imgPath + '/lg/' + imgName + imgExt
+	- buildLgst = imgPath + '/lgst/' + imgName + imgExt
+
+	picture
+		<!--[if IE 9]><video style="display: none;"><![endif]-->
+		source(srcset='#{buildLgst}' media='(min-width: #{widthLg}px)')
+		source(srcset='#{buildLg}' media='(min-width: #{widthMd}px)')
+		source(srcset='#{buildMd}' media='(min-width: #{widthSm}px)')
+		<!--[if IE 9]></video><![endif]-->
+		img(src='#{buildFb}' alt='#{imgAlt}' class='#{imgClass}')
