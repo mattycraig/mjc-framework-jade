@@ -100,18 +100,18 @@ mixin hlpWeekdays(className, lang)
 
 //- #F : RESPONSIVE IMAGES (USING SRCSET & W)
 //- ---------------------------------|
-mixin hlpSrcset(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, widthLg, widthLgst)
+mixin hlpSrcset(imgSubfolder, imgName, imgAlt, imgClass, imgExt, widthSm, widthMd, widthLg, widthLgst)
+	- imgSubfolder = imgSubfolder || ''
 	- imgExt = imgExt || '.jpg'
-	- imgPath = imgPath || 'images'
 	- widthSm = widthSm || '320'
 	- widthMd = widthMd || '640'
 	- widthLg = widthLg || '1024'
 	- widthLgst = widthLgst || '1800'
-	- buildFb = imgPath + '/sm/' + imgName + imgExt
-	- buildSm = imgPath + '/sm/' + imgName  + imgExt + ' ' + widthSm + 'w'
-	- buildMd = imgPath + '/md/' + imgName + imgExt + ' ' + widthMd + 'w'
-	- buildLg = imgPath + '/lg/' + imgName + imgExt + ' ' + widthLg + 'w'
-	- buildLgst = imgPath + '/lgst/' + imgName + imgExt + ' ' + widthLgst + 'w'
+	- buildFb = 'images/resp/' + imgSubfolder + imgName + imgExt
+	- buildSm = 'images/resp/' + imgSubfolder + imgName + '-sm'  + imgExt + ' ' + widthSm + 'w'
+	- buildMd = 'images/resp/' + imgSubfolder + imgName + '-md' + imgExt + ' ' + widthMd + 'w'
+	- buildLg = 'images/resp/' + imgSubfolder + imgName + '-lg' + imgExt + ' ' + widthLg + 'w'
+	- buildLgst = 'images/resp/' + imgSubfolder + imgName + '-lgst' + imgExt + ' ' + widthLgst + 'w'
 
 	img(
 		src='#{buildFb}'
@@ -123,16 +123,16 @@ mixin hlpSrcset(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, wi
 
 //- #G : RESPONSIVE IMAGES (USING SRCSET & X)
 //- ---------------------------------|
-mixin hlpSrcsetX(imgName, imgAlt, imgExt, imgClass, imgPath, width1x, width2x, width3x)
+mixin hlpSrcsetX(imgSubfolder, imgName, imgAlt, imgClass, imgExt, width1x, width2x, width3x)
+	- imgSubfolder = imgSubfolder || ''
 	- imgExt = imgExt || '.jpg'
-	- imgPath = imgPath || 'images'
 	- width1x = width1x || '320'
 	- width2x = width2x || '640'
 	- width3x = width3x || '1024'
-	- buildFb = imgPath + '/sm/' + imgName + imgExt
-	- build1x = imgPath + '/sm/' + imgName + imgExt + ' 1x'
-	- build2x = imgPath + '/md/' + imgName + imgExt + ' 2x'
-	- build3x = imgPath + '/lg/' + imgName + imgExt + ' 3x'
+	- buildFb = 'images/resp/' + imgSubfolder + imgName + imgExt
+	- build1x = 'images/resp/' + imgSubfolder + imgName + '-sm' + imgExt + ' 1x'
+	- build2x = 'images/resp/' + imgSubfolder + imgName + '-md' + imgExt + ' 2x'
+	- build3x = 'images/resp/' + imgSubfolder + imgName + '-lg' + imgExt + ' 3x'
 
 	img(
 		src='#{buildFb}'
@@ -144,18 +144,18 @@ mixin hlpSrcsetX(imgName, imgAlt, imgExt, imgClass, imgPath, width1x, width2x, w
 
 //- #H : RESPONSIVE IMAGES (USING PICTURE)
 //- ---------------------------------|
-mixin hlpPicture(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, widthLg, widthLgst)
+mixin hlpPicture(imgSubfolder, imgName, imgAlt, imgClass, imgExt, widthSm, widthMd, widthLg, widthLgst)
+	- imgSubfolder = imgSubfolder || ''
 	- imgExt = imgExt || '.jpg'
-	- imgPath = imgPath || 'images'
 	- widthSm = widthSm || '320'
 	- widthMd = widthMd || '640'
 	- widthLg = widthLg || '1024'
 	- widthLgst = widthLgst || '1800'
-	- buildFb = imgPath + '/sm/' + imgName + imgExt
-	- buildSm = imgPath + '/sm/' + imgName + imgExt
-	- buildMd = imgPath + '/md/' + imgName + imgExt
-	- buildLg = imgPath + '/lg/' + imgName + imgExt
-	- buildLgst = imgPath + '/lgst/' + imgName + imgExt
+	- buildFb = 'images/resp/' + imgSubfolder + imgName + imgExt
+	- buildSm = 'images/resp/' + imgSubfolder + imgName + '-sm' + imgExt
+	- buildMd = 'images/resp/' + imgSubfolder + imgName + '-md' + imgExt
+	- buildLg = 'images/resp/' + imgSubfolder + imgName + '-lg' + imgExt
+	- buildLgst = 'images/resp/' + imgSubfolder + imgName + '-lgst' + imgExt
 
 	picture
 		<!--[if IE 9]><video style="display: none;"><![endif]-->

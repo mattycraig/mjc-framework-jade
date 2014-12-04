@@ -498,23 +498,35 @@ module.exports = function (grunt) {
 				options: {
 					sizes: [{
 							width: 320,
-							name: 'sm'
+							name: 'sm',
+							rename: false,
+							suffix: '-sm'
 						},{
 							width: 640,
-							name: 'md'
+							name: 'md',
+							rename: false,
+							suffix: '-md'
 						},{
 							width: 1024,
-							name: 'lg'
+							name: 'lg',
+							rename: false,
+							suffix: '-lg'
 						},{
 							width: 1800,
-							name: 'lgst'
+							name: 'lgst',
+							rename: false,
+							suffix: '-lgst'
 					}]
 				},
 				files: [{
 					expand: true,
-					src: ['**/*.{jpg,gif,png}'],
+					src: [
+						'**/*.{jpg,gif,png}',
+						'!resp/**/*.{jpg,gif,png}'
+					],
 					cwd: '<%= config.app %>/images',
-					custom_dest: '<%= config.app %>/images/{%= path %}/{%= name %}/'
+					// custom_dest: '<%= config.app %>/images/{%= path %}/{%= name %}/'
+					dest: '<%= config.app %>/images/resp/'
 				}]
 			}
 		}
