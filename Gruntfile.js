@@ -512,9 +512,9 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					expand: true,
-					src: ['**.{jpg,gif,png}'],
+					src: ['**/*.{jpg,gif,png}'],
 					cwd: '<%= config.app %>/images',
-					custom_dest: '<%= config.app %>/images/{%= name %}/'
+					custom_dest: '<%= config.app %>/images/{%= path %}/{%= name %}/'
 				}]
 			}
 		}

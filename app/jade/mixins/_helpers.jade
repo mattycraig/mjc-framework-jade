@@ -10,8 +10,9 @@
 //- #C : FORMS: MONTH SELECT
 //- #D : FORMS: NUMBERED DAYS SELECT
 //- #E : FORMS: DAYS OF THE WEEK SELECT
-//- #F : RESPONSIVE IMAGES (USING SRCSET)
-//- #G : RESPONSIVE IMAGES (USING PICTURE)
+//- #F : RESPONSIVE IMAGES (USING SRCSET & W)
+//- #G : RESPONSIVE IMAGES (USING SRCSET & X)
+//- #H : RESPONSIVE IMAGES (USING PICTURE)
 //- ---------------------------------|
 
 
@@ -97,7 +98,7 @@ mixin hlpWeekdays(className, lang)
 				option(value='#{day.toLowerCase()}')= day
 
 
-//- #F : RESPONSIVE IMAGES (USING SRCSET)
+//- #F : RESPONSIVE IMAGES (USING SRCSET & W)
 //- ---------------------------------|
 mixin hlpSrcset(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, widthLg, widthLgst)
 	- imgExt = imgExt || '.jpg'
@@ -120,7 +121,28 @@ mixin hlpSrcset(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, wi
         )
 
 
-//- #G : RESPONSIVE IMAGES (USING PICTURE)
+//- #G : RESPONSIVE IMAGES (USING SRCSET & X)
+//- ---------------------------------|
+mixin hlpSrcsetX(imgName, imgAlt, imgExt, imgClass, imgPath, width1x, width2x, width3x)
+	- imgExt = imgExt || '.jpg'
+	- imgPath = imgPath || 'images'
+	- width1x = width1x || '320'
+	- width2x = width2x || '640'
+	- width3x = width3x || '1024'
+	- buildFb = imgPath + '/sm/' + imgName + imgExt
+	- build1x = imgPath + '/sm/' + imgName + imgExt + ' 1x'
+	- build2x = imgPath + '/md/' + imgName + imgExt + ' 2x'
+	- build3x = imgPath + '/lg/' + imgName + imgExt + ' 3x'
+
+	img(
+		src='#{buildFb}'
+		alt='#{imgAlt}'
+		class='#{imgClass}'
+		srcset='#{build1x}, #{build2x}, #{build3x}'
+        )
+
+
+//- #H : RESPONSIVE IMAGES (USING PICTURE)
 //- ---------------------------------|
 mixin hlpPicture(imgName, imgAlt, imgExt, imgClass, imgPath, widthSm, widthMd, widthLg, widthLgst)
 	- imgExt = imgExt || '.jpg'
