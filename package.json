@@ -22,14 +22,14 @@
     "grunt-newer": "^0.8.0",
     "grunt-responsive-images": "^0.1.4",
     "grunt-rev": "^0.1.0",
-    "grunt-sass": "^0.16.1",
+    "grunt-sass": "^0.17.0",
     "grunt-scss-lint": "^0.3.4",
     "grunt-svgmin": "^2.0.0",
     "grunt-uncss": "^0.3.8",
     "grunt-usemin": "^2.6.2",
     "grunt-wiredep": "^2.0.0",
+    "jit-grunt": "^0.9.0",
     "jshint-stylish": "^1.0.0",
-    "load-grunt-tasks": "^1.0.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {

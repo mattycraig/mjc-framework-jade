@@ -14,7 +14,11 @@ module.exports = function (grunt) {
 	require('time-grunt')(grunt);
 
 	// Load grunt tasks automatically
-	require('load-grunt-tasks')(grunt);
+	require('jit-grunt')(grunt, {
+		useminPrepare: 'grunt-usemin',
+		validation: 'grunt-html-validation',
+		scsslint: 'grunt-scss-lint'
+	});
 
 	// Configurable paths
 	var config = {
@@ -168,8 +172,6 @@ module.exports = function (grunt) {
 		// Compiles Sass to CSS and generates necessary files if requested
 		sass: {
 			options: {
-				// loadPath: 'bower_components',
-				// style: 'expanded'
 				sourceMap: true
 			},
 			dist: {
@@ -210,7 +212,7 @@ module.exports = function (grunt) {
 
 						var page = src[0].replace(/app\/jade\/(.*)\/index.jade/, '$1');
 
-						if (page == src[0]) {
+						if (page === src[0]) {
 							page = 'index';
 						}
 
@@ -250,10 +252,6 @@ module.exports = function (grunt) {
 					'modernizr'
 				]
 			}
-			// , sass: {
-			// 	src: ['<%= config.app %>/css/{,*/}*.{scss,sass}'],
-			// 	ignorePath: /(\.\.\/){1,2}bower_components\//
-			// }
 		},
 
 		// Renames files for browser caching purposes
@@ -263,9 +261,9 @@ module.exports = function (grunt) {
 					src: [
 						'<%= config.dist %>/js/{,*/}*.js',
 						'<%= config.dist %>/css/{,*/}*.css',
-						'<%= config.dist %>/images/{,*/}*.*',
-						'<%= config.dist %>/css/fonts/{,*/}*.*',
-						'<%= config.dist %>/*.{ico,png}'
+						// '<%= config.dist %>/images/{,*/}*.*',
+						// '<%= config.dist %>/css/fonts/{,*/}*.*',
+						// '<%= config.dist %>/*.{ico,png}'
 					]
 				}
 			}
@@ -323,14 +321,8 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					collapseBooleanAttributes: true,
-					// collapseWhitespace: true,
-					// conservativeCollapse: true,
-					// removeAttributeQuotes: true,
 					removeCommentsFromCDATA: true,
-					removeEmptyAttributes: true,
-					// removeOptionalTags: true,
-					// removeRedundantAttributes: true,
-					// useShortDoctype: true
+					removeEmptyAttributes: true
 				},
 				files: [{
 					expand: true,
@@ -347,7 +339,7 @@ module.exports = function (grunt) {
 					removeCommentsFromCDATA: true,
 					removeComments: true,
 					removeEmptyAttributes: true,
-					removeRedundantAttributes: true,
+					removeRedundantAttributes: true
 				},
 				files: [{
 					expand: true,
@@ -525,7 +517,6 @@ module.exports = function (grunt) {
 						'!resp/**/*.{jpg,gif,png}'
 					],
 					cwd: '<%= config.app %>/images',
-					// custom_dest: '<%= config.app %>/images/{%= path %}/{%= name %}/'
 					dest: '<%= config.app %>/images/resp/'
 				}]
 			}
