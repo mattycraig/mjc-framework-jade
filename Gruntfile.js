@@ -35,6 +35,10 @@ module.exports = function (grunt) {
 
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
+			clear: {
+				files: ['<%= config.app %>/**/*'],
+				tasks: ['clear']
+			},
 			bower: {
 				files: ['bower.json'],
 				tasks: ['wiredep']
@@ -43,7 +47,7 @@ module.exports = function (grunt) {
 				files: ['<%= config.app %>/js/{,*/}*.js'],
 				tasks: ['jshint'],
 				options: {
-					livereload: true
+					livereload: '<%= connect.options.livereload %>'
 				}
 			},
 			jstest: {
@@ -75,7 +79,7 @@ module.exports = function (grunt) {
 				files: '<%= config.app %>/jade/**/*.jade',
 				tasks: ['jade', 'validation'],
 				options: {
-					livereload: true
+					livereload: '<%= connect.options.livereload %>'
 				}
 			}
 			// ,
@@ -447,17 +451,7 @@ module.exports = function (grunt) {
 			]
 		},
 
-		// Remove unused CSS after build process
-		// Useful for removing code bloat from Bootstrap & font awesome, etc
-		uncss: {
-			dist: {
-				files: {
-					'<%= config.dist %>/css/app-uncss.css': ['<%= config.dist %>/*.html']
-				}
-			}
-		},
-
-		// Validate our html code via W3C checker
+		// Validate our HTML code via W3C checker
 		validation: {
 			options: {
 				reset: grunt.option('reset') || false,
@@ -482,7 +476,7 @@ module.exports = function (grunt) {
 				reporterOutput: 'log/scss-lint-report.xml',
 				colorizeOutput: true
 			}
-		 },
+		},
 
 		// Create responsive images
 		responsive_images: {
@@ -588,8 +582,7 @@ module.exports = function (grunt) {
 		'modernizr',
 		'rev',
 		'usemin',
-		'htmlmin:nocms',
-		'uncss'
+		'htmlmin:nocms'
 	]);
 
 	grunt.registerTask('default', [
