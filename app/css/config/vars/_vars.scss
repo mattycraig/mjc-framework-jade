@@ -3,10 +3,6 @@
 // -----------------------------------------------------------------|
 // Contains all variables available throughout our project.
 
-// BOOTSTRAP OVERRIDE VARIABLES
-// ---------------------------------|
-@import 'bootstrap';
-
 // COLOUR VARIABLES
 // ---------------------------------|
 @import 'colours';
@@ -22,3 +18,7 @@
 // ANIMATION VARIABLES
 // ---------------------------------|
 @import 'animation';
+
+// BOOTSTRAP OVERRIDE VARIABLES
+// ---------------------------------|
+@import 'bootstrap';

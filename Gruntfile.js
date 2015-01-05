@@ -35,10 +35,6 @@ module.exports = function (grunt) {
 
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
-			clear: {
-				files: ['<%= config.app %>/**/*'],
-				tasks: ['clear']
-			},
 			bower: {
 				files: ['bower.json'],
 				tasks: ['wiredep']
@@ -342,8 +338,7 @@ module.exports = function (grunt) {
 					conservativeCollapse: true,
 					removeCommentsFromCDATA: true,
 					removeComments: true,
-					removeEmptyAttributes: true,
-					removeRedundantAttributes: true
+					removeEmptyAttributes: true
 				},
 				files: [{
 					expand: true,
@@ -568,7 +563,7 @@ module.exports = function (grunt) {
 		'htmlmin:dist'
 	]);
 
-	// No CMS: Minify HTML, Rev, UnCSS
+	// No CMS build: Minify HTML, Rev
 	grunt.registerTask('build-nocms', [
 		'clean:dist',
 		'jade',
