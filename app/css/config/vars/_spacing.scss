@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------|
+//	SPACING VARIABLES
+// -----------------------------------------------------------------|
+// Contains all spaciing used for padding/margin variables in our project.
+
+// COMMON SPACING VALUES
+// ---------------------------------|
+$space-5: 5px;
+$space-10: 10px;
+$space-15: 15px;
+$space-20: 20px;
+$space-25: 25px;
+$space-30: 30px;
+$space-35: 35px;
+$space-40: 40px;
+
+// SET DEFAULT VALUE (LOWEST)
+// ---------------------------------|
+$spacing: $space-15;
+
+// MULTIPLES OF DEFAULT
+// ---------------------------------|
+$spacing-2: $spacing * 2;
+$spacing-3: $spacing * 3;
+$spacing-4: $spacing * 4;
+$spacing-5: $spacing * 5;
+$spacing-6: $spacing * 6;
+$spacing-7: $spacing * 7;
+$spacing-8: $spacing * 8;
+$spacing-9: $spacing * 9;
+$spacing-10: $spacing * 10;

@@ -54,7 +54,7 @@ module.exports = function (grunt) {
 				files: ['Gruntfile.js']
 			},
 			sass: {
-				files: ['<%= config.app %>/css/{,*/}*.{scss,sass}'],
+				files: ['<%= config.app %>/css/**/*.{scss,sass}'],
 				tasks: ['sass:server', 'autoprefixer']
 			},
 			styles: {
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 			},
 			jade: {
 				files: '<%= config.app %>/jade/**/*.jade',
-				tasks: ['jade', 'validation'],
+				tasks: ['jade', 'jsbeautifier', 'validation'],
 				options: {
 					livereload: '<%= connect.options.livereload %>'
 				}
@@ -509,6 +509,23 @@ module.exports = function (grunt) {
 					dest: '<%= config.app %>/images/resp/'
 				}]
 			}
+		},
+
+		jsbeautifier: {
+			files: ['<%= config.tmp %>/**/*.html'],
+			options: {
+				html: {
+					indent_inner_html: false,
+					braceStyle: 'collapse',
+					indentChar: ' ',
+					indentScripts: 'normal',
+					indentSize: 2,
+					maxPreserveNewlines: 10,
+					preserveNewlines: true,
+					unformatted: ['sub', 'sup', 'b', 'em', 'u'],
+					wrapLineLength: 0
+				}
+			}
 		}
 
 	});
@@ -525,6 +542,7 @@ module.exports = function (grunt) {
 			'clean:server',
 			'wiredep',
 			'jade',
+			'jsbeautifier',
 			'concurrent:server',
 			'autoprefixer',
 			'connect:livereload',
@@ -551,6 +569,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'jade',
+		'jsbeautifier',
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
