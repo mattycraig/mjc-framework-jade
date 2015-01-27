@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------|
+//	UTILITY MODULE & CLASSES
+// -----------------------------------------------------------------|
+// Common utility classes used for modifier spacing, type, color etc.
+
+// FONT COLOUR CLASSES
+// ---------------------------------|
+.u-color-alpha {
+	color: $color-alpha;
+}
+
+.u-color-beta {
+	color: $color-beta;
+}
+
+.u-color-gamma {
+	color: $color-gamma;
+}
+
+.u-color-delta {
+	color: $color-delta;
+}
+
+.u-color-grey {
+	color: $color-99;
+}
+
+// UTILITY FLOAT CLASSES
+// ---------------------------------|
+$floats:
+	Left,
+	Right;
+
+@each $float in $floats {
+	.u-align#{$float} {
+		float: to-lower-case($float);
+	}
+}
+
+// UTILITY MARGIN/PADDING CLASSES
+// ---------------------------------|
+$i: 1;
+$dirs: Top, Right, Bottom, Left;
+$types: margin, padding;
+
+@while $i < 6 {
+
+	@each $dir in $dirs {
+		@each $type in $types {
+			.u-#{$type}#{$dir}#{if($i != 1, '-' + $i, '')} {
+				#{$type}-#{to-lower-case($dir)}: if($i != 1, $spacing * $i, $spacing);
+			}
+		}
+	}
+
+	$i: $i + 1;
+}
