@@ -1,12 +1,4 @@
-// Generated on 2014-09-02 using
-// generator-webapp 0.5.0
 'use strict';
-
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// If you want to recursively match all subfolders, use:
-// 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
 
@@ -67,7 +59,7 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'<%= config.app %>/{,*/}*.html',
-					'.tmp/css/{,*/}*.css',
+					'<%= config.tmp %>/css/{,*/}*.css',
 					'<%= config.app %>/images/{,*/}*'
 				]
 			},
@@ -78,14 +70,6 @@ module.exports = function (grunt) {
 					livereload: '<%= connect.options.livereload %>'
 				}
 			}
-			// ,
-			// scsslint: {
-			// 	files: [
-			// 		'<%= config.app %>/css/**/*.scss',
-			// 		'!<%= config.app %>/css/vendor/*.scss'
-			// 	],
-			// 	tasks: ['scsslint']
-			// }
 		},
 
 		// The actual grunt server settings
@@ -179,7 +163,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: '<%= config.app %>/css',
 					src: ['*.{scss,sass}'],
-					dest: '.tmp/css',
+					dest: '<%= config.tmp %>/css',
 					ext: '.css'
 				}]
 			},
@@ -188,7 +172,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: '<%= config.app %>/css',
 					src: ['*.{scss,sass}'],
-					dest: '.tmp/css',
+					dest: '<%= config.tmp %>/css',
 					ext: '.css'
 				}]
 			}
@@ -200,8 +184,8 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: '<%= config.app %>/jade',
-					src: ['{,*/}*.jade', '!**/_*'],
-					dest: '.tmp/',
+					src: ['**/*.jade', '!**/_*'],
+					dest: '<%= config.tmp %>/',
 					ext: '.html'
 				}],
 				options: {
@@ -233,9 +217,9 @@ module.exports = function (grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '.tmp/css/',
+					cwd: '<%= config.tmp %>/css/',
 					src: '{,*/}*.css',
-					dest: '.tmp/css/'
+					dest: '<%= config.tmp %>/css/'
 				}]
 			}
 		},
@@ -248,7 +232,7 @@ module.exports = function (grunt) {
 					'<%= config.app %>/jade/**/*.jade'
 				],
 				exclude: [
-					'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+					// 'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
 					'modernizr'
 				]
 			}
@@ -277,7 +261,7 @@ module.exports = function (grunt) {
 				dest: '<%= config.dist %>'
 			},
 			html: [
-				'.tmp/*.html'
+				'<%= config.tmp %>/*.html'
 		  	]
 		},
 
@@ -361,7 +345,7 @@ module.exports = function (grunt) {
 						'*.{ico,png,txt}',
 						'images/{,*/}*.webp',
 						'images/videos/{,*/}*.*',
-						'{,*/}*.html',
+						'**/*.html',
 						'css/fonts/{,*/}*.*'
 					]
 				}, {
@@ -379,9 +363,9 @@ module.exports = function (grunt) {
 				}, {
 					expand: true,
 					dot: true,
-					cwd: '.tmp/',
+					cwd: '<%= config.tmp %>/',
 					src: [
-						'{,*/}*.html'
+						'**/*.html'
 					],
 					dest: '<%= config.dist %>'
 				}]
@@ -390,7 +374,7 @@ module.exports = function (grunt) {
 				expand: true,
 				dot: true,
 				cwd: '<%= config.app %>/css',
-				dest: '.tmp/css/',
+				dest: '<%= config.tmp %>/css/',
 				src: '{,*/}*.css'
 			}
 		},
@@ -456,7 +440,7 @@ module.exports = function (grunt) {
 				relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.']
 			},
 			files: {
-				src: ['.tmp/*.html']
+				src: ['<%= config.tmp %>/*.html']
 			}
 		},
 

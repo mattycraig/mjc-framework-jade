@@ -1,31 +1,31 @@
 // -----------------------------------------------------------------|
 //	UTILITY MODULE & CLASSES
 // -----------------------------------------------------------------|
-// Common utility classes used for modifier spacing, type, color etc.
+// Common utility classes used for modifier spacing, color, width, etc.
 
-// FONT COLOUR CLASSES
+// UTILITY FONT COLOUR
 // ---------------------------------|
-.u-color-alpha {
-	color: $color-alpha;
-}
+.u-color-alpha { color: $color-alpha; }
+.u-color-beta { color: $color-beta; }
+.u-color-gamma { color: $color-gamma; }
+.u-color-delta { color: $color-delta; }
+.u-color-grey { color: $color-99; }
 
-.u-color-beta {
-	color: $color-beta;
-}
+// UTILITY BACKGROUND COLOUR
+// ---------------------------------|
+.u-bkg-alpha { background: $color-alpha; }
+.u-bkg-beta { background: $color-beta; }
+.u-bkg-gamma { background: $color-gamma; }
+.u-bkg-delta { background: $color-delta; }
+.u-bkg-grey { background: $color-99; }
 
-.u-color-gamma {
-	color: $color-gamma;
-}
+// UTILITY TEXT ALIGNMENT
+// ---------------------------------|
+.u-textCenter { text-align: center !important; }
+.u-textLeft { text-align: left !important; }
+.u-textRight { text-align: right !important; }
 
-.u-color-delta {
-	color: $color-delta;
-}
-
-.u-color-grey {
-	color: $color-99;
-}
-
-// UTILITY FLOAT CLASSES
+// UTILITY FLOAT
 // ---------------------------------|
 $floats:
 	Left,
@@ -33,25 +33,142 @@ $floats:
 
 @each $float in $floats {
 	.u-align#{$float} {
-		float: to-lower-case($float);
+		float: to-lower-case($float) !important;
 	}
 }
 
-// UTILITY MARGIN/PADDING CLASSES
+// UTILITY MARGIN/PADDING
 // ---------------------------------|
-$i: 1;
-$dirs: Top, Right, Bottom, Left;
-$types: margin, padding;
+$i: 0;
+$dirs:
+	Top,
+	Right,
+	Bottom,
+	Left;
+$types:
+	margin,
+	padding;
 
 @while $i < 6 {
-
 	@each $dir in $dirs {
 		@each $type in $types {
 			.u-#{$type}#{$dir}#{if($i != 1, '-' + $i, '')} {
-				#{$type}-#{to-lower-case($dir)}: if($i != 1, $spacing * $i, $spacing);
+				#{$type}-#{to-lower-case($dir)}: if($i != 1, $spacing * $i, $spacing) !important;
 			}
 		}
 	}
-
 	$i: $i + 1;
+}
+
+// UTILITY WIDTH
+// ---------------------------------|
+.u-size1of12 {
+  width: calc(100% * 1 / 12) !important;
+}
+
+.u-size1of10 {
+  width: 10% !important;
+}
+
+.u-size1of8 {
+  width: 12.5% !important;
+}
+
+.u-size1of6,
+.u-size2of12 {
+  width: calc(100% * 1 / 6) !important;
+}
+
+.u-size1of5,
+.u-size2of10 {
+  width: 20% !important;
+}
+
+.u-size1of4,
+.u-size2of8,
+.u-size3of12 {
+  width: 25% !important;
+}
+
+.u-size3of10 {
+  width: 30% !important;
+}
+
+.u-size1of3,
+.u-size2of6,
+.u-size4of12 {
+  width: calc(100% * 1 / 3) !important;
+}
+
+.u-size3of8 {
+  width: 37.5% !important;
+}
+
+.u-size2of5,
+.u-size4of10 {
+  width: 40% !important;
+}
+
+.u-size5of12 {
+  width: calc(100% * 5 / 12) !important;
+}
+
+.u-size1of2,
+.u-size2of4,
+.u-size3of6,
+.u-size4of8,
+.u-size5of10,
+.u-size6of12 {
+  width: 50% !important;
+}
+
+.u-size7of12 {
+  width: calc(100% * 7 / 12) !important;
+}
+
+.u-size3of5,
+.u-size6of10 {
+  width: 60% !important;
+}
+
+.u-size5of8 {
+  width: 62.5% !important;
+}
+
+.u-size2of3,
+.u-size4of6,
+.u-size8of12 {
+  width: calc(100% * 2 / 3) !important;
+}
+
+.u-size7of10 {
+  width: 70% !important;
+}
+
+.u-size3of4,
+.u-size6of8,
+.u-size9of12 {
+  width: 75% !important;
+}
+
+.u-size4of5,
+.u-size8of10 {
+  width: 80% !important;
+}
+
+.u-size5of6,
+.u-size10of12 {
+  width: calc(100% * 5 / 6) !important;
+}
+
+.u-size7of8 {
+  width: 87.5% !important;
+}
+
+.u-size9of10 {
+  width: 90% !important;
+}
+
+.u-size11of12 {
+  width: calc(100% * 11 / 12) !important;
 }

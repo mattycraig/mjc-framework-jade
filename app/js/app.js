@@ -5,9 +5,9 @@
 	'use strict';
 
 	//--------------------------------------------|
-	// AVOID CONSOLE ERRORS
+	// AVOID CONSOLE ERRORS (<= IE9)
 	//--------------------------------------------|
-	$(function () {
+	(function(){
 		var method;
 		var noop = function () {};
 		var methods = [
@@ -27,32 +27,35 @@
 				console[method] = noop;
 			}
 		}
-	});
+	})();
 
 	//--------------------------------------------|
-	// OUTDATED BROWSER
+	// VENDOR & PLUGINS
 	//--------------------------------------------|
-	$(function () {
+	(function(){
+
+		// OUTDATED BROWSER (<= IE8)
+		//----------------------------------------|
 		outdatedBrowser({
 			bgColor: '#f25648',
 			color: '#ffffff',
 			lowerThan: 'boxShadow',
 			languagePath: ''
 		});
-	});
+
+		// FASTCLICK.JS
+		//----------------------------------------|
+		FastClick.attach(document.body);
+
+	})();
 
 	//--------------------------------------------|
-	// FASTCLICK.JS
+	// APP
 	//--------------------------------------------|
-	$(function () {
-    	FastClick.attach(document.body);
-	});
+	(function(){
 
-	//--------------------------------------------|
-	// GO!
-	//--------------------------------------------|
-	$(function () {
 		console.log('Lets get started!');
-	});
+
+	})();
 
 })(jQuery, window, document);

@@ -1,0 +1,18 @@
+//- -----------------------------------------------------------------|
+//- MODAL MIXIN
+//- -----------------------------------------------------------------|
+//- Contains the template for a page modal overlay.
+
+mixin modal(id, append)
+	- append = append || 'body'
+
+	.modal(id='modal-#{id}' data-mo-append= append)
+		.modal-dialog
+			.modal-content
+				.modal-contain
+					button.modal-close(type='button' data-dismiss='modal') Close
+						span
+					if block
+						block
+					else
+						p No modal content provided, whoops!

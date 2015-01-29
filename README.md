@@ -12,7 +12,7 @@ Next, let's start our local webserver. Our watch task will compile all neseccary
 grunt serve
 ```
 
-Before we build our project, let's ensure our files are up to standards:
+Before we build our project, let's ensure our files are up to standards (optional):
 
 ```bash
 grunt scsslint && grunt validation && grunt jshint
@@ -30,7 +30,7 @@ If this is a project that will be a static flat site:
 grunt build-nocms
 ```
 
-# Useful Tasks
+## Useful Tasks
 
 If this project requires responsive images, use the following grunt task which will produce resized images in the /images/resp/ folder.
 
